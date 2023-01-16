@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Remotes -->
+  <remote name="github" fetch="https://github.com" />
+  <remote name="gitlab" fetch="https://gitlab.com" />
+  <remote name="ligm" fetch="https://github.com/ligmaosp" revision="tm" />
+  <remote name="graphene" fetch="https://github.com/GrapheneOS" revision="13" />
+  <remote name="lineage" fetch="https://github.com/LineageOS" revision="lineage-20.0" />
+
+  <project name="bionic" path="bionic" remote="ligm" />
+  <project name="bootable_recovery" path="bootable/recovery" remote="ligm" />
+  <project name="build" path="build/make" remote="ligm">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="Cleanspec.mk" dest="build/Cleanspec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project name="build_soong" path="build/soong" remote="ligm">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project name="frameworks_base" path="frameworks/base" remote="ligm" />
+  <project name="frameworks_native" path="frameworks/native" remote="ligm" />
+  <project name="frameworks_opt_telephony" path="frameworks/opt/telephony" remote="ligm" />
+  <project name="manifest" path="manifest" remote="ligm" />
+  <project name="packages_apps_Contacts" path="packages/apps/Contacts" remote="ligm" />
+  <project name="packages_apps_Dialer" path="packages/apps/Dialer" remote="ligm" />
+  <project name="packages_apps_ElmyraService" path="packages/apps/ElmyraService" remote="ligm" />
+  <project name="packages_apps_Gallery2" path="packages/apps/Gallery2" remote="ligm" />
+  <project name="packages_apps_Messaging" path="packages/apps/Messaging" remote="ligm" />
+  <project name="packages_apps_RepainterService" path="packages/apps/RepainterService" remote="ligm" />
+  <project name="packages_apps_Settings" path="packages/apps/Settings" remote="ligm" />
+  <project name="packages_apps_ThemePicker" path="packages/apps/ThemePicker" remote="ligm" />
+  <project name="system_core" path="system/core" remote="ligm" />
+  <project name="system_sepolicy" path="system/sepolicy" remote="ligm" />
+  <project name="vendor_ligm" path="vendor/ligm" remote="ligm" />
+
+  <!-- Lineage -->
+  <project name="android_external_json-c" path="external/json-c" remote="lineage" />
+  <project name="android_hardware_lineage_compat" path="hardware/lineage/compat" remote="lineage" />
+  <project name="android_hardware_qcom_camera" path="hardware/qcom/camera" remote="lineage" />
+  <project name="android_hardware_qcom_display" path="hardware/qcom/display" remote="lineage" />
+  <project name="android_hardware_qcom_gps" path="hardware/qcom/gps" remote="lineage" />
+  <project name="android_hardware_qcom_media" path="hardware/qcom/media" remote="lineage" />
+  <project name="android_hardware_qcom_sdm845_display" path="hardware/qcom/sdm845/display" remote="lineage" />
+  <project name="android_hardware_qcom_sdm845_media" path="hardware/qcom/sdm845/media" remote="lineage" />
+  <project name="android_hardware_qcom_wlan" path="hardware/qcom/wlan" remote="lineage" />
+  <project name="android_packages_apps_Jelly" path="packages/apps/Jelly" remote="lineage" />
+  <project name="android_vendor_qcom_opensource_interfaces" path="vendor/qcom/opensource/interfaces" remote="lineage" />
+
+  <!-- Inline kernel build -->
+  <project name="platform/external/dwarves" path="external/dwarves" remote="aosp" revision="3c8f7e8b2cf7ff902b71c42d00fda30f30114b07" />
+  <project name="android_prebuilts_clang_kernel_linux-x86_clang-r416183b" path="prebuilts/clang/kernel/linux-x86/clang-r416183b" clone-depth="1" remote="lineage" />
+  <project name="android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" remote="lineage" revision="lineage-19.1" />
+  <project name="android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="pdk,linux,arm" clone-depth="1" remote="lineage" revision="lineage-19.1" />
+  <project name="android_prebuilts_gcc_linux-x86_x86_x86_64-linux-android-4.9" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" remote="lineage" revision="lineage-19.1" />
+  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" clone-depth="1" remote="aosp" revision="refs/tags/android-13.0.0_r0.44" />
+  <project name="android_prebuilts_tools-lineage" path="prebuilts/tools-lineage" clone-depth="1" remote="lineage" />
+
+  <!-- Graphene -->
+  <project name="platform_external_Camera" path="external/Camera" remote="graphene" />
+</manifest>
